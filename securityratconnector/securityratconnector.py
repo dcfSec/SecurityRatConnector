@@ -1047,12 +1047,8 @@ class SecurityRatConnector:
             'description': description,
             'showOrder': showOrder,
             'active': active,
-            'statusColumns': {
-                'id': statusColumnList,
-            },
-            'optColumns': {
-                'id': optColumnList,
-            }
+            'statusColumns': statusColumnList,
+            'optColumns': optColumnList,
         }
         return self.post('projectTypes', data)
 
