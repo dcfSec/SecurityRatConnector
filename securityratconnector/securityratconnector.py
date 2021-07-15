@@ -1100,7 +1100,60 @@ class SecurityRatConnector:
         if id_ is None:
             raise ValueError('Id can\'t be none')
         return self.delete('projectTypes/%s' % id_)
-
+    
+    def addStatusColumn(self, name: str, description: str, isEnum: bool = False, 
+                        showOrder: int = 0, active: bool = True) -> dict:
+        data = {
+                'name': name,
+                'description': description,
+                'showOrder': showOrder,
+                'active': active,
+                'id': None,
+                'isEnum': isEnum
+            }
+        return self.post('statusColumns', data) 
+    
+    def addStatusColumnValue(self, name: str, description: str, statusColumnId: int,
+                             showOrder: int = 0, active: bool = True) -> dict:
+        data = {
+                'name': name,
+                'description': description,
+                'statusColumn': {
+                            'id': statusColumnId,
+                        },
+                'showOrder': showOrder,
+                'active': active,
+                'id': None
+            }
+        return self.post('statusColumnValues', data) 
+    
+    def addAlternativeSet(self, name: str, description: str, optColumnId: id, 
+                          showOrder: int = 0, active: bool = True) -> dict:
+        data = {
+                'name': name,
+                'description': description,
+                'optColumn': {
+                        'id': optColumnId,
+                    },
+                'showOrder': showOrder,
+                'active': active,
+                'id': None
+            }
+        return self.post('alternativeSets', data) 
+    
+    def addAlternativeInstance(self, content: str, alternativeSetId: id, 
+                               requirementSkeletonId: id) -> dict:
+        data = {
+                'content': content,
+                'alternativeSet': {
+                        'id': alternativeSetId,
+                        },
+                'requirementSkeleton': {
+                        'id': requirementSkeletonId
+                        },
+                'id': None
+        }
+        return self.post('alternativeInstances', data) 
 
 class SecurityRatEntryList(UserList):
     """
@@ -1160,3 +1213,4 @@ class SecurityRatEntryList(UserList):
             if isinstance(v, dict):
                 data[k] = self.removeDeactivatedDict(v)
         return [x for x in data if x is not None]
+    
