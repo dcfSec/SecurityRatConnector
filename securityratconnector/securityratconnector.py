@@ -1075,9 +1075,9 @@ class SecurityRatConnector:
         if description is not None:
             data['description'] = description
         if showOrder is not None:
-            data['showOrder'] = description
+            data['showOrder'] = showOrder
         if active is not None:
-            data['active'] = description
+            data['active'] = active
         if optColumnIds is not None:
             optColumnList = []
             for i in optColumnIds:
