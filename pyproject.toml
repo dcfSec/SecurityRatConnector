@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "SecurityRatConnector"
+version = "1.0.0"
+description = "An API connector for SecurityRat"
+license = "Apache-2.0"
+authors = ["dcfSec <contributor@dcfsec.com>"]
+readme = "README.md"
+repository = "https://github.com/dcfSec/SecurityRatConnector"
+packages = [
+    { include = "securityratconnector" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+requests = "^2.23.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
