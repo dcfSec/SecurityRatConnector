@@ -13,7 +13,7 @@ pip install securityratconnector
 ````
 
 ## Documentation
-https://dcfSec.github.io/securityratconnector/
+https://dcfsec.github.io/SecurityRatConnector/
 
 ## Versioning
 
