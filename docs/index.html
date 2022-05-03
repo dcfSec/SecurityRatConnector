@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>SecurityRatConnector’s documentation! &mdash; SecurityRatConnector 1.0.0 documentation</title>
+  <title>SecurityRatConnector’s documentation! &mdash; SecurityRatConnector 1.1.0 documentation</title>
   
 
   
@@ -640,6 +640,45 @@ A changing request overrides the cache at the next get</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="securityratconnector.SecurityRatConnector.getAlternativeInstance">
+<code class="sig-name descname">getAlternativeInstance</code><span class="sig-paren">(</span><em class="sig-param">id_</em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#securityratconnector.SecurityRatConnector.getAlternativeInstance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a specific alternative instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>int</em>) – The Id of the object The Id of the object</p>
+</dd>
+<dt class="field-even">Return dict</dt>
+<dd class="field-even"><p>The requested data</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – Error if the Id is None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="securityratconnector.SecurityRatConnector.getAlternativeInstances">
+<code class="sig-name descname">getAlternativeInstances</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#securityratconnector.SecurityRatConnector.getAlternativeInstances" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all alternative instances</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return dict</dt>
+<dd class="field-odd"><p>The requested data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="securityratconnector.SecurityRatConnector.getAlternativeSets">
+<code class="sig-name descname">getAlternativeSets</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#securityratconnector.SecurityRatConnector.getAlternativeSets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all alternative set instances</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return dict</dt>
+<dd class="field-odd"><p>The requested data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="securityratconnector.SecurityRatConnector.getCached">
 <code class="sig-name descname">getCached</code><span class="sig-paren">(</span><em class="sig-param">cacheId: str</em><span class="sig-paren">)</span> &#x2192; Union[list, dict]<a class="headerlink" href="#securityratconnector.SecurityRatConnector.getCached" title="Permalink to this definition">¶</a></dt>
 <dd><p>If caching is activated the cached version will be returned if it is unchanged.</p>
@@ -895,6 +934,45 @@ A changing request overrides the cache at the next get</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return list</dt>
 <dd class="field-odd"><p>all requirement skeletons</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="securityratconnector.SecurityRatConnector.getStatusColumn">
+<code class="sig-name descname">getStatusColumn</code><span class="sig-paren">(</span><em class="sig-param">id_</em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#securityratconnector.SecurityRatConnector.getStatusColumn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a specific status column instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>int</em>) – The Id of the object The Id of the object</p>
+</dd>
+<dt class="field-even">Return dict</dt>
+<dd class="field-even"><p>The requested data</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – Error if the Id is None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="securityratconnector.SecurityRatConnector.getStatusColumnValues">
+<code class="sig-name descname">getStatusColumnValues</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#securityratconnector.SecurityRatConnector.getStatusColumnValues" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all status column value instances</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return dict</dt>
+<dd class="field-odd"><p>The requested data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="securityratconnector.SecurityRatConnector.getStatusColumns">
+<code class="sig-name descname">getStatusColumns</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#securityratconnector.SecurityRatConnector.getStatusColumns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all status column instances</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return dict</dt>
+<dd class="field-odd"><p>The requested data</p>
 </dd>
 </dl>
 </dd></dl>
