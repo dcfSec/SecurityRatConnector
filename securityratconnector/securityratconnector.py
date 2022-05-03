@@ -1101,6 +1101,26 @@ class SecurityRatConnector:
             raise ValueError('Id can\'t be none')
         return self.delete('projectTypes/%s' % id_)
     
+    def getStatusColumn(self, id_) -> dict:
+        """
+        Returns a specific status column instance
+
+        :param int id_: The Id of the object The Id of the object
+        :return dict: The requested data
+        :raises ValueError: Error if the Id is None
+        """
+        if id_ is None:
+            raise ValueError('Id can\'t be none. Use getCollectionCategories for a list of all collection categories')
+        return self.get('statusColumns/%s' % id_)
+
+    def getStatusColumns(self) -> list:
+        """
+        Returns all status column instances
+
+        :return dict: The requested data
+        """
+        return self.getCached('statusColumns')
+    
     def addStatusColumn(self, name: str, description: str, isEnum: bool = False, 
                         showOrder: int = 0, active: bool = True) -> dict:
         data = {
@@ -1112,6 +1132,14 @@ class SecurityRatConnector:
                 'isEnum': isEnum
             }
         return self.post('statusColumns', data) 
+    
+    def getStatusColumnValues(self) -> list:
+        """
+        Returns all status column value instances
+
+        :return dict: The requested data
+        """
+        return self.getCached('statusColumnValues')
     
     def addStatusColumnValue(self, name: str, description: str, statusColumnId: int,
                              showOrder: int = 0, active: bool = True) -> dict:
@@ -1127,6 +1155,15 @@ class SecurityRatConnector:
             }
         return self.post('statusColumnValues', data) 
     
+    def getAlternativeSets(self) -> list:
+        """
+        Returns all alternative set instances
+
+        :return dict: The requested data
+        """
+        return self.getCached('alternativeSets')
+    
+    
     def addAlternativeSet(self, name: str, description: str, optColumnId: id, 
                           showOrder: int = 0, active: bool = True) -> dict:
         data = {
@@ -1141,6 +1178,26 @@ class SecurityRatConnector:
             }
         return self.post('alternativeSets', data) 
     
+    def getAlternativeInstance(self, id_) -> dict:
+        """
+        Returns a specific alternative instance
+
+        :param int id_: The Id of the object The Id of the object
+        :return dict: The requested data
+        :raises ValueError: Error if the Id is None
+        """
+        if id_ is None:
+            raise ValueError('Id can\'t be none. Use getCollectionCategories for a list of all collection categories')
+        return self.get('alternativeInstances/%s' % id_)
+
+    def getAlternativeInstances(self) -> list:
+        """
+        Returns all alternative instances
+
+        :return dict: The requested data
+        """
+        return self.getCached('alternativeInstances')
+    
     def addAlternativeInstance(self, content: str, alternativeSetId: id, 
                                requirementSkeletonId: id) -> dict:
         data = {
@@ -1154,7 +1211,7 @@ class SecurityRatConnector:
                 'id': None
         }
         return self.post('alternativeInstances', data) 
-
+ 
 class SecurityRatEntryList(UserList):
     """
     A custom list to handle the server responses
