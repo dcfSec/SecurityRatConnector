@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "SecurityRatConnector"
-version = "1.0.0"
+version = "1.1.0"
 description = "An API connector for SecurityRat"
 license = "Apache-2.0"
 authors = ["dcfSec <contributor@dcfsec.com>"]
